@@ -1,0 +1,19 @@
+{
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "mocha lib/**/*_test.js",
+    "package": "yarn build && yarn gzipfiles",
+    "gzipfiles": " zip -r ./kmha-claim.zip ./main.js ./lib/ ./node_modules/"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@keymesh/contracts": "^0.0.9",
+    "ethers": "^3.0.25"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "typescript": "^2.9.2"
+  }
+}
