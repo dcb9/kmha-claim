@@ -5,7 +5,8 @@
     "watch": "tsc -w",
     "test": "mocha lib/**/*_test.js",
     "package": "yarn build && yarn gzipfiles",
-    "gzipfiles": " zip -r ~/Downloads/kmha-claim.zip ./main.js ./lib/ ./node_modules/"
+    "deploy": "yarn package && aws lambda update-function-code --zip-file fileb://./kmha-claim.zip --function-name",
+    "gzipfiles": " zip -r ./kmha-claim.zip ./main.js ./lib/ ./node_modules/"
   },
   "keywords": [],
   "dependencies": {
